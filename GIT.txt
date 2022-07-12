@@ -1,0 +1,12 @@
+rc95 12/07/2022 01:16
+---------------
+
+git init
+
+git status
+
+
+crear archivo .gitignore en la raiz y especificar..
+
+
+

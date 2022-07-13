@@ -89,3 +89,19 @@ const port = process.env.PORT || 3001
 tambien al iniciar vamos a pasar este puerto..
 y en los fetch.. tenemos que omitir el "localhost"
 
+
+
+(luego vamos a agregar los cambios, hacer commit y luego push)
+git add .
+git commit -m "cambios para arrancar desde node"
+git push 
+(esto deberiamos ver ya en github)
+
+(y ahora vamos a hacer push a heroku)
+git remote
+(vemos que está heroku y el origin)
+(hacemos push al heroku)
+git push heroku main
+
+// y ahora podemos volver a ver nuestra web..
+https://rc95-weather-application.herokuapp.com/

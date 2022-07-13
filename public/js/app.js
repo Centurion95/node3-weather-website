@@ -11,7 +11,8 @@ console.log('client side js script is loaded!');
 
 
 // http://localhost:3001
-const url = 'http://localhost:3001/weather?address=Asuncion'
+const url = '/weather?address=Asuncion' //rc95 12/07/2022 22:33 - el puerto dinamico..
+// const url = 'http://localhost:3001/weather?address=Asuncion'
 // const url = 'http://localhost:3001/weather?address='
 // const url = 'http://localhost:3001/weather?address=!'
 fetch(url).then((response) => {
@@ -42,7 +43,9 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value
     // console.log(location)
 
-    const url = 'http://localhost:3001/weather?address=' + location
+    //rc95 12/07/2022 22:33 - el puerto dinamico..
+    const url = '/weather?address=' + location
+    // const url = 'http://localhost:3001/weather?address=' + location
     fetch(url).then((response) => {
         response.json().then((data) => {
             if (data.error) {

@@ -17,6 +17,9 @@ const app = express();
 //nodemon src/app.js -e js,hbs
 //-e: extensions
 
+const port = process.env.PORT || 3001 //rc95 12/07/2022 22:33 - obtiene dinamicamente el puerto, sino, por default el que le pasamos (3001)
+
+
 //47. Dynamic pages with Templating - rc95 11/07/2022 22:26
 // https://www.npmjs.com/package/hbs
 // npm i hbs@4.0.1
@@ -169,9 +172,15 @@ app.get('/*', (req, res) => {
 
 
 //start the server:
-app.listen(3001, () => {
-    console.log('Server listening at port 3001');
-    console.log('http://localhost:3001/');
+// app.listen(3001, () => {
+//     console.log('Server listening at port 3001');
+//     console.log('http://localhost:3001/');
+// });
+
+//rc95 12/07/2022 22:33 - el puerto dinamico..
+app.listen(port, () => {
+    console.log('Server listening at port ' + port);
+    console.log('http://localhost:' + port + '/');
 });
 
 //y ahora para probar: 

@@ -50,3 +50,42 @@ git remote add origin https://github.com/Centurion95/node3-weather-website.git
 git branch -M main
 git push -u origin main
 
+- vamos a configuraciones, claves ssh, agregar, ponemos el nombre
+cat ~/.ssh/id_rsa.pub
+
+y copiamos "el texto" en el campo del github..
+"el texto":
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC2qSIkfHciFt0SQZgH2upgIdE+3ibHHdqW118wYREBlx+bNYnLtF7YM5yOSpl5cktyYk8IIW4xlm6xGXBdEVeqpLIXyZ8ebYHtiJtlLRIeC8FF8qBkrk5qaIwgqwdiCT8sImaRRvjPcsFdjohwGOqXhdlatN/RYD3+1Zy4o+rzP8JCFYEvKCqBofo7KS6AK0RWyGDtVFAP/srhyFkH6Nv1dxWvL1LccW9PVYjWi1QSueGprnULLCIKWOKrBAPm7Zwb/OVhd2o49ztCGVrEMRX6nKSCz6Aqo7ao25EBbZRK/pjE604GnUkU6Sty7q/uNtUSqXnhrqFhDjGOTdLD0PaWEQ6REGn56RghcAdjqQn7YiFbIQj63V5hqn2HmUywsaKQjm1Hx/uFee3tZlXOagxSR+UFcEh+YJa6d81dnB4+HQRFIuj8f7t6srhUOaMddA25x7tV4Bca/L5xF1cBttkwqwguR5wUVzYxZathDV63ra8RqtaFol/nX4wXE9v10W/MQt8L+juKFzeEoGJ83uOp+DvCUoImlcg5aSRWOZxZMzo4hLh4sVI+tvXZiZcl59LmQMoeva4Ooj8VcVFs669hOHxqO2a8lW4Io/mEc2eg8iDT8D0WDK/XN7kxNMonYCVk53uVx6EWnJwQWUMF4OPLlNRGK5+9uashRflo2YxDyQ== centu95@hotmail.com
+
+(para probar si funciona)
+ssh -T git@github.com
+
+
+
+67. deploy node.js to heroku  .. rc95 12/07/2022 22:23
+heroku keys:add 
+
+(sale algo como: Found an SSH public key at /home/rodrigo/.ssh/id_rsa.pub)
+(le damos Y, enter)
+
+(luego desde la carpeta del proyecto vamos a ejecutar)
+heroku create rc95-weather-application
+
+(sale algo como:)
+Creating ⬢ rc95-weather-application... done
+https://rc95-weather-application.herokuapp.com/ | https://git.heroku.com/rc95-weather-application.git
+
+
+(ahora vamos a proveer a heroku las indicaciones para deployar la app)
+(abrimos package.json del proyecto y agregamos el script)
+"start": "node src/app.js",
+
+(podemos probar localmente: npm run start)
+
+(vamos a cambiar el puerto en el que va a correr nuestra ubicacion, por el que heroku nos provee)
+//esto dentro de src/app.js
+const port = process.env.PORT || 3001 
+
+tambien al iniciar vamos a pasar este puerto..
+y en los fetch.. tenemos que omitir el "localhost"
+

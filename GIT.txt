@@ -6,7 +6,47 @@ git init
 git status
 
 
-crear archivo .gitignore en la raiz y especificar..
+# crear archivo .gitignore en la raiz y especificar..
+
+git add src/ 
+#para agregar de a uno..
+
+git add .
+#para agregar todo
+
+#podemos ver el status con: git status
+
+git commit -m "1er commit"
+#m de message
 
 
+
+
+65. seting up ssh keys.. rc95 12/07/2022 22:00
+ls -a -l ~/.ssh
+ssh-keygen -t rsa -b 4096 -C "centu95@hotmail.com"
+(luego todo enter, para los valores por default..)
+
+(verificamos nuevamente)
+ls -a -l ~/.ssh
+
+(observamos que se crearon id_rsa y id_rsa.pub)
+
+(ahora registramos)
+eval "$(ssh-agent -s)"
+
+(nos muestra algo como: Agent pid 25785)
+
+(finalmente)
+ssh-add ~/.ssh/id_rsa
+
+(sale algo como: Identity added: /home/rodrigo/.ssh/id_rsa (centu95@hotmail.com))
+
+
+
+66. pushing code to github  .. rc95 12/07/2022 22:06
+- vamos al github y creamos un nuevo repositorio..
+git remote add origin https://github.com/Centurion95/node3-weather-website.git
+git branch -M main
+git push -u origin main
 

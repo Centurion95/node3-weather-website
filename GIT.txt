@@ -105,3 +105,13 @@ git push heroku main
 
 // y ahora podemos volver a ver nuestra web..
 https://rc95-weather-application.herokuapp.com/
+
+
+(si nos da error, algo como app crash..)
+// el prof. dejó este comentario: "I don't see socket.io installed and listed in package.json. Fixing that should fix the issue. You'll need to install it, commit the changes, and redeploy to Heroku."
+npm install socket.io --save
+
+git add .
+git commit -m "se instala socket.io por el app_crash en heroku"
+git push 
+git push heroku main

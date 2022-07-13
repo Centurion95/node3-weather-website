@@ -115,3 +115,23 @@ git add .
 git commit -m "se instala socket.io por el app_crash en heroku"
 git push 
 git push heroku main
+
+//seguimos con el error...  :(
+
+//veo que el log tira algo como: 
+error: Cannot find module 'hbs'
+
+//asi que voy a tratar:
+npm install hbs --save
+
+git add .
+git commit -m "se instala hbs por el app_crash en heroku"
+git push 
+git push heroku main
+
+npm install express --save
+
+git add .
+git commit -m "se instala express por el app_crash en heroku"
+git push 
+git push heroku main

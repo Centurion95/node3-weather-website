@@ -135,3 +135,13 @@ git add .
 git commit -m "se instala express por el app_crash en heroku"
 git push 
 git push heroku main
+
+//MUCHO OJO, TODOS ESTOS TEMAS FUERON PORQUE LAS DEPENDENCIAS ESTABAN EN EL package.json de la carpeta RAIZ, no en la carpeta del proyecto que alzamos independeintemente!!!
+
+
+
+
+
+
+68. new feature deployment worlkflow...
+- realizamos un cambio en el about, por ejemplo..

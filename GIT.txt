@@ -145,3 +145,18 @@ git push heroku main
 
 68. new feature deployment worlkflow...
 - realizamos un cambio en el about, por ejemplo..
+git status
+git add .
+git commit -m "cambios en el about"
+git push 
+git push heroku main
+
+
+npm i postman-request --save
+
+
+git status
+git add .
+git commit -m "instalamos postman-request"
+git push 
+git push heroku main
